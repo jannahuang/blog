@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "views": 1,
+    "title": "中国古典四大名著的词云效果",
+    "content": "输入：四大名著的txt文本文件\r\n输出：词云效果及有形状的词云\r\n代码：\r\nimport jieba      \r\nimport wordcloud\r\nfrom scipy.misc import imrea片\r\nmask = imread(\"sun.png\")\r\nnames = {\"红楼梦.txt\", \"三国演义.txt\", \"水浒传.txt\", \"西游记.txt\"}\r\n\r\nfor name in names:        \r\n    f = open(name, \"r\", encoding=\"utf-8\")     \r\n    t = f.read()\r\n    f.close()\r\n    ls = jieba.lcut(t)      \r\n    txt = \" \".join(ls)\r\n    w = wordcloud.WordCloud(font_path = \"msyh.ttc\", width = 1000, height = 700, mask = mask)      \r\n    w.generate(txt)\r\n    w.to_file(name.split(\".\")[0] + \".png\")",
+    "ct": "2019-01-06 23:31:19",
+    "ut": "2019-01-06 23:31:19",
+    "user_id": 5,
+    "board_id": 1
+  }
+]

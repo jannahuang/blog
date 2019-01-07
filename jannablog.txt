@@ -1,0 +1,4 @@
+2019-01-07 07:54:23 kwargs,  {'board_id': 3} <class 'dict'>
+2019-01-07 07:54:24 kwargs,  {'board_id': 2} <class 'dict'>
+2019-01-07 07:54:25 kwargs,  {'board_id': 1} <class 'dict'>
+2019-01-07 07:54:27 kwargs,  {'id': 5} <class 'dict'>

@@ -1,0 +1,156 @@
+/* header 图片 */
+    nav::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .header-name{
+        color: white;
+        float: left;
+        font-weight: bold;
+        font-size: 20px;
+        position: relative;
+        top: 2px;
+        left: 8px;
+    }
+
+    .header-img{
+        margin: 10px 10px 0px 10px;
+        background: black url(earth_moon1.jpg) no-repeat;
+        text-align: center;
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+        padding: 50px;
+        margin: 10px 10px 5px;
+        text-shadow: 1px 1px 3px #151635;
+        min-width: 224px;
+    }
+
+/* 导航栏 */
+    nav {
+        background-color: #242424;
+        margin: 0px 10px 0px 10px;
+    }
+    nav ul {
+        margin: 0px;
+        list-style-type: none;
+        padding: 5px 0px 5px 0px;
+        float: right;
+    }
+    nav ul li {
+        display: inline;
+        padding: 5px 10px 5px 10px;
+    }
+    a:link {
+      color:            #3399cc;
+      text-decoration:  none;
+      border-bottom:    thin dotted black;
+    }
+    a:visited {
+      color:            #3399cc;
+      text-decoration:  none;
+    }
+    nav ul li a:link, nav ul li a:visited {
+        color: #ffffff;
+        border-bottom: none;
+        font-weight: bold;
+
+        text-shadow: 1px 1px 3px #151635;
+
+        text-transform: uppercase;
+    }
+
+    li.selected {
+        background-color: #336699;
+        color: black;
+    }
+/* 内容整体 */
+
+    #tableContainer {
+        display: table;
+        border-spacing: 10px;
+    }
+
+
+
+    #tableContainer {
+        display: table;
+        border-spacing: 10px;
+    }
+
+    #tableRow {
+        display: table-row;
+    }
+
+
+    #left-bar {
+     display: table-cell;
+     background-color: #DDDDDD;
+     padding: 15px;
+     vertical-align: top;
+     width: 20%;
+     max-width: 300px;
+    }
+
+    #main {
+      display: table-cell;
+      background:       #DDDDDD;
+      font-size:        105%;
+      padding:          15px;
+      vertical-align: top;
+    }
+
+    #sidebar {
+      display: table-cell;
+      background:       #DDDDDD ;
+      font-size:        105%;
+      padding:          15px;
+      vertical-align: top;
+      width: 30%;
+      max-width: 300px;
+    }
+    .avatar {
+        width: 155px;
+        height: 155px;
+    }
+    .text-centered{
+        text-align: center;
+    }
+
+    .title-article {
+    background-color: #242424;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 1px;
+    }
+
+    .weibo {
+    background-color: #242424;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 1px;
+    }
+
+
+    .aboutme {
+    background-color: #242424;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 1px;
+    }
+
+/* 页脚 */
+      footer {
+      background-color: #242424;
+      color: #ffffff;
+      text-align: center;
+      padding: 15px;
+      margin: 0px 10px 10px 10px;
+      font-size: 90%;
+      clear: right;
+    }
