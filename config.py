@@ -1,1 +1,1 @@
-secret_key = 'janna.blog'
+secret_key = 'nihkworld'
