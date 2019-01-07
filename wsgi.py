@@ -11,15 +11,15 @@ application = app.app
 
 """
 建立一个软连接
-ln -s /var/www/bbs/bbs.conf /etc/supervisor/conf.d/blog.conf
+ln -s /var/www/blog/blog.conf /etc/supervisor/conf.d/blog.conf
 
-ln -s /var/www/bbs/bbs.nginx /etc/nginx/sites-enabled/bbs
+ln -s /var/www/blog/blog.nginx  /etc/nginx/sites-enabled/blog
 
 
 
 ➜  ~ cat /etc/supervisor/conf.d/blog.conf
 
-[program:bbs]
+[program:blog]
 command=/usr/local/bin/gunicorn wsgi -c gunicorn.config.py
 directory=/var/www/blog
 autostart=true
@@ -28,7 +28,5 @@ autorestart=true
 
 
 
-/usr/local/bin/gunicorn wsgi
---bind 0.0.0.0:2001
---pid /tmp/飙泪og.pid
+/usr/local/bin/gunicorn wsgi --bind 0.0.0.0:2001 --pid /tmp/blog.pid
 """
