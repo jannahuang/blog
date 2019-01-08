@@ -13,7 +13,7 @@ application = app.app
 建立一个软连接
 ln -s /var/www/blog/blog.conf /etc/supervisor/conf.d/blog.conf
 
-ln -s /var/www/blog/blog.nginx  /etc/nginx/sites-enabled/blog
+ln -s /var/www/blog/blog.nginx /etc/nginx/sites-enabled/blog
 
 
 
