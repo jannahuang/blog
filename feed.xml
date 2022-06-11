@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/jannahuang/blog</id><title>RSS feed of jannahuang's blog</title><updated>2022-06-11T08:05:50.147189+00:00</updated><author><name>jannahuang</name><email>jannajanna@126.com</email></author><link href="https://github.com/jannahuang/blog"/><link href="https://raw.githubusercontent.com/jannahuang/blog/main/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><entry><id>https://github.com/jannahuang/blog/issues/5</id><title>test2</title><updated>2022-06-11T08:05:50.561882+00:00</updated><link href="https://github.com/jannahuang/blog/issues/5" rel="alternate"/><published>2022-06-11T08:03:08+00:00</published></entry><entry><id>https://github.com/jannahuang/blog/issues/4</id><title>test</title><updated>2022-06-11T08:05:50.758910+00:00</updated><link href="https://github.com/jannahuang/blog/issues/4" rel="alternate"/><published>2022-06-11T08:01:35+00:00</published></entry><entry><id>https://github.com/jannahuang/blog/issues/1</id><title>实现 JSON.parse()</title><updated>2022-06-11T08:05:50.962571+00:00</updated><content type="html"><![CDATA[<h1>JSON 是什么</h1>
+<p>综合 <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/JSON">MDN</a> 和<a href="https://zh.wikipedia.org/wiki/JSON">维基百科</a>上的定义，JSON 是一种轻量级数据交换格式，其内容由属性和值所组成，易于阅读和处理。
+JSON 可以表示<strong>数字、布尔值、字符串、null、数组</strong>（有序序列），以及由这些值组成的<strong>对象</strong>（字符串与值的映射）。JSON 不支持复杂的数据类型（函数、正则表达式、日期等）。
+一个有效的JSON文档的根节点<strong>必须是一个对象或一个数组</strong>。</p>
+<h1>JSON.parse() 是什么</h1>
+<p>JavaScript 语言自带 JSON 对象，包含两个方法：
+JSON.parse() 用于解析 JSON 字符串并返回对应对象/值的方法；
+JSON.stringify() 用于将对象/值转换为 JSON 字符串的方法。</p>
+<h1>JSON.parse() 用法举例</h1>
+<ol>
+<li><strong>对象</strong> JSON 字符串：</li>
+</ol>
+<pre><code>{
+    &quot;a1&quot;: [1, &quot;2&quot;, -3, 4.5, {
+        &quot;k0&quot;: &quot;v0&quot;
+    }],
+    &quot;obj&quot;: {
+        &quot;k1&quot;: &quot;v1&quot;,
+        &quot;k2&quot;: [&quot;10&quot;, -20]
+    }
+}
+</code></pre>
+<p>JSON.parse() 后结果：
+<img src="https://raw.githubusercontent.com/jannahuang/blog/main/pictures/json.parse1.png" alt="对象 JSON" /></p>
+<ol start="2">
+<li><strong>数组</strong> JSON 字符串：</li>
+</ol>
+<pre><code>[
+    true, null, {
+        &quot;obj&quot;: {
+            &quot;k1&quot;: &quot;v1&quot;,
+            &quot;k2&quot;: [10, &quot;-20&quot;]
+        }
+    }, [1, &quot;2&quot;, {
+        &quot;a1&quot;: {
+            &quot;k3&quot;: &quot;v3&quot;
+        }
+    }]
+]
+</code></pre>
+<p>JSON.parse() 后结果：
+<img src="https://raw.githubusercontent.com/jannahuang/blog/main/pictures/json.parse2.png" alt="数组 JSON" /></p>
+<h1>步骤拆解</h1>
+<p>从上述举例可见，实现一个 json-parser，首先需要逐字读取字符串，去除空格和换行，提取并保存有效的词（token）；然后将词（token）按顺序和词法规则生成新的对象或数组。
+拆解思维导图如下：
+<img src="https://raw.githubusercontent.com/jannahuang/blog/main/pictures/json-parser%E6%AD%A5%E9%AA%A4%E6%8B%86%E8%A7%A3.png" alt="json-parser 步骤拆解" />
+接下来按步骤实现代码。</p>
+<h1>代码实现</h1>
+<h2>提取 token</h2>
+<h3>实现 jsonTokens()</h3>
+<h2>生成值</h2>
+<h3>实现 parseObject()</h3>
+<h3>实现 parseArray()</h3>
+]]></content><link href="https://github.com/jannahuang/blog/issues/1" rel="alternate"/><category term="JavaScript"/><published>2022-06-11T03:58:21+00:00</published></entry></feed>
