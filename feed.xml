@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/jannahuang/blog</id><title>RSS feed of jannahuang's blog</title><updated>2022-06-11T08:39:52.814394+00:00</updated><author><name>jannahuang</name><email>jannajanna@126.com</email></author><link href="https://github.com/jannahuang/blog"/><link href="https://raw.githubusercontent.com/jannahuang/blog/main/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><entry><id>https://github.com/jannahuang/blog/issues/1</id><title>实现 JSON.parse()</title><updated>2022-06-11T08:39:53.011635+00:00</updated><content type="html"><![CDATA[<h1>JSON 是什么</h1>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/jannahuang/blog</id><title>RSS feed of jannahuang's blog</title><updated>2022-06-12T11:28:28.832657+00:00</updated><author><name>jannahuang</name><email>jannajanna@126.com</email></author><link href="https://github.com/jannahuang/blog"/><link href="https://raw.githubusercontent.com/jannahuang/blog/main/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><entry><id>https://github.com/jannahuang/blog/issues/1</id><title>实现 JSON.parse()</title><updated>2022-06-12T11:28:29.032238+00:00</updated><content type="html"><![CDATA[<h1>JSON 是什么</h1>
 <p>综合 <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/JSON">MDN</a> 和<a href="https://zh.wikipedia.org/wiki/JSON">维基百科</a>上的定义，JSON 是一种轻量级数据交换格式，其内容由属性和值所组成，易于阅读和处理。
 JSON 可以表示<strong>数字、布尔值、字符串、null、数组</strong>（有序序列），以及由这些值组成的<strong>对象</strong>（字符串与值的映射）。JSON 不支持复杂的数据类型（函数、正则表达式、日期等）。
 一个有效的JSON文档的根节点<strong>必须是一个对象或一个数组</strong>。</p>
@@ -49,6 +49,37 @@ JSON.stringify() 用于将对象/值转换为 JSON 字符串的方法。</p>
 <h1>代码实现</h1>
 <h2>提取 token</h2>
 <h3>实现 jsonTokens()</h3>
+<pre><code class="language-javascript">const jsonTokens = (s) =&gt; {
+    let r = []
+    for (let i = 0; i &lt; s.length; i++) {
+        let e = s[i]
+        if (isSymbol(e)) {
+            r.push(e)
+        } else if (e === &#x27;&quot;&#x27; || e === &quot;&#x27;&quot;) {
+            // 跳过前面的引号
+            let t = stringEnd(s, i + 1)
+            r.push(t[0])
+            // 跳过后面的引号
+            i += t[1] + 1
+        } else if (isNumber(e)) {
+            let t = numberEnd(s, i)
+            r.push(t[0])
+            i += t[1] - 1
+        } else if (isLetter(e)) {
+            // log(&#x27;in&#x27;)
+            // 跳过前面的引号
+            let t = stringEnd(s, i)
+            // log(&#x27;t in&#x27;, t)
+            r.push(t[0])
+            // 跳过后面的引号
+            i += t[1]
+        } else if (e === &#x27; &#x27;) {
+            // 空格跳过，不处理
+        }
+    }
+    return r
+}
+</code></pre>
 <h2>生成值</h2>
 <h3>实现 parseObject()</h3>
 <h3>实现 parseArray()</h3>
